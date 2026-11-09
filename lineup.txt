@@ -1,0 +1,40 @@
+Natalia
+CS 1380 Homework 22 
+
+Part a
+
+1. strcpy can overflow the destination because it doesn't check the buffer size. strncpy limits how much it copies, but I still need to add '\0' myself to make sure the string ends properly.
+
+2. You need the destination size (dest_size) and the current length of dest (strlen(dest)). The room left is dest_size - 1 - strlen(dest), where the -1 saves a slot for '\0'.
+
+3. It returns 0.
+
+Part B
+
+1. strstr points to where the match starts in the original string. This lets me find its position without making a copy.
+
+2. safe_join keeps dest valid by making sure there is room for '\0' at the end. strncat also adds the ending character automatically.
+
+Part C
+
+1. The source is my .c and .h files (lineup.h, lineup.c, main.c). The compiled program ./lineup is the artifact.
+
+2. PATCH is for bug fixes. MINOR is for adding features. MAJOR is for changes that break existing code.
+
+3. I would ship 1.2.4. It is only a bug fix with the same function names, so only PATCH goes up and MAJOR and MINOR stay the same.
+
+4. If I only give someone the .c files, they need a compiler to build the program. If I give them the compiled program, they can run it directly, as long as their system supports it.
+
+Git output:
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	lineup.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+$ git log --oneline
+0797088 Add demo main
+712d381 Add lineup helpers
